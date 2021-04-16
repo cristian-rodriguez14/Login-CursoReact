@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./components/Login";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Home from "./components/Home";
+import Register from "./components/Register";
+import Api from "./components/Api";
+import AlertaState from "./context/alertas/alertaState";
+import { useState } from "react";
 
 function App() {
+  const [check, setCheck] = useState(false);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AlertaState>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home check={check} setCheck={setCheck} />
+          </Route>
+          <Route exact path="/login">
+            <Login check={check} setCheck={setCheck} />
+          </Route>
+          <Route exact path="/api">
+            <Api check={check} setCheck={setCheck} />
+          </Route>
+          <Route exact path="/register">
+            <Register check={check} setCheck={setCheck} />
+          </Route>
+        </Switch>
+      </Router>
+    </AlertaState>
   );
 }
 

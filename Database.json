@@ -1,0 +1,16 @@
+{
+  "Usuarios": [
+    {
+      "id": 1,
+      "userName": "pligurta465",
+      "eMail": "pligurta465@gmail.com",
+      "passWord": "passwd"
+    },
+    {
+      "username": "gago",
+      "email": "cristian.rodriguez9011@gmail.com",
+      "password": "123456",
+      "id": 2
+    }
+  ]
+}
